@@ -1,0 +1,23 @@
+#Este programa se utilliza para imprimir archivos en Python
+#Vamos a crear 2 listas de nombres
+nombre=["Carlos","Francisco","Sergio"]
+apellido=["Angeles","Juarez","Gonzales"]
+#lista vacia para los correos
+correos=[]
+#Combinación de los nombres y apellidos para crear correo en un dominio
+ln=len(nombre)
+la=len(apellido)
+#debe de haber la misma cantidad de nombres que de apellidos
+if ln==la:
+  for i in range(ln):
+    correo=nombre[i]+"."+apellido[i]+"@correo.com.mx"
+    correos.append(correo)
+
+else:
+    print("No son la misma cantidad de Nombres y Apellidos, revisa tu lista")
+#Imprimir correos en una lista
+lista=open("lista.txt","w")
+for x in range(ln):
+    lista.write(correos[x])
+    lista.write("\n")
+lista.close()    
